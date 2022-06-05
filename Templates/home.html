@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <div class="col1">
+            <h3>
+                <form class="form-inline">
+                  <div class="form-group mb-3">
+                    <label class="sr-only">Add task</label>
+                  </div>
+                  <div class="input-group mb-3">
+
+                    <input type="text" class="form-control"  placeholder="Enter your task here">
+                      <div class="input-group-append">
+
+                          <div class="col-x3-3">
+                            <button type="submit" class="btn btn-primary mb-2">Add</button>
+                          </div>
+                      </div>
+
+                  </div>
+
+
+                </form>
+            </h3>
+        </div>
+    </div>
+    <div>
+        <h3>{{items}}</h3>
+    </div>
+</div>
+
+{% endblock %}
