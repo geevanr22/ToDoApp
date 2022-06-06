@@ -3,34 +3,35 @@
 
 {% block content %}
 
-<div class="container">
+<div class="container-fluid">
     <div class="row">
-        <div class="col1">
-            <h3>
-                <form class="form-inline">
-                  <div class="form-group mb-3">
-                    <label class="sr-only">Add task</label>
-                  </div>
-                  <div class="input-group mb-3">
+        <div class="col">
+            <h3 class="sr-only mt-3">Add task</h3>
+                <form class="form-inline" action="add_todo"method="post">
 
-                    <input type="text" class="form-control"  placeholder="Enter your task here">
-                      <div class="input-group-append">
+                        <input autofocus type="text" class="form-control input-normal" name="content" placeholder="Enter your task here" style="width:400px">
+                        <button type="submit" class="btn btn-primary mb-1 mt-2">Add</button>
 
-                          <div class="col-x3-3">
-                            <button type="submit" class="btn btn-primary mb-2">Add</button>
-                          </div>
-                      </div>
 
-                  </div>
+                        <ul>{% for item in items %}
+                            <div class="w-50 p-3" style="background-color: #eee;">
+                                <li> {{ item.items}}
+                            </div>
+                                    <button type="submit"
+                                        class="btn btn-warning
+                                        mb-1 mt-2">Delete
+                                    </button>
+                                </li>
+
+                          {% endfor %}
+                        </ul>
 
 
                 </form>
-            </h3>
         </div>
     </div>
-    <div>
-        <h3>{{items}}</h3>
-    </div>
 </div>
+
+
 
 {% endblock %}
