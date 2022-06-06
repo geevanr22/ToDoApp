@@ -7,7 +7,6 @@ from django.views.decorators.csrf import csrf_exempt
 
 def home_view(requests, *args, **kwargs):
 
-    data = ToDoApp.objects.all()
 
     data = ToDoApp.objects.all()
 
